@@ -1,0 +1,34 @@
+\label{Se:car2Car}
+Car2X communication (C2X) describes the communication of cars and other IoT devices. These can vary in types and divide C2X into further subclasses. The communication with city infrastructure such as traffic lights or Road Side Units (RSU) is described as Car 2 Infrastructure (C2I) while the communication to other vehicles is described as (C2C). But the essence of all these interactions can be formulated as the dissemination of information into an ad hoc network made up of several IoT devices. In the forefront of this general car-based IoT application are the aspects of networking, sensors, and security as well as safety combined to enable the foundation of automated driving. This enablement can in general be described as the goal to which the C2X technology is a gateway. We will focus in the following chapter on the technologies that enable this communication and especially on the challenges the networks are still facing in terms of communication, as well as presenting a few example use cases of the technology in general.
+
+An ad hoc network is a decentralized and spontaneously formed network existing within a certain region around the participants. It is differentiated into so called "Single-Hop" and "Multi-Hop" networks that differ in the amount of nodes a message can travel across. The most commonly used form of an ad hoc network for the C2X communication is the "Vehicular Ad Hoc Network" (VANET).\cite{liu2019congestion} This specialized network is based on the widely used "Mobile Ad Hoc Network" (MANET) but further supports communication on the "Physical Layer" as well as the "Data Link Layer" by using the IEEE802.11p Protocol.
+One major challenge inherent to ad hoc networks are the communication errors that can arise by too high or too low node density within the network. While the "Broadcast Storm" occurs at too high node density as a result of the network getting flooded with messages, networks with a too low node density struggle with insufficient data penetration. Since both hinder the ability of the cars to receive critical information about possible risks, they present a great threat to the safety of automated driving.
+Naturally, there have been several suggested solutions for solving the issue which can roughly be sorted into 6 categories. \cite{rashid2020overview} \cite{rashid2020reliable}
+
+\begin{table}[h]
+\renewcommand{\figurename}{Figure}
+\centering
+\begin{tabular}{||c c||} 
+ \hline
+ Categorie & Examples \\ [0.5ex] 
+ \hline\hline
+ Quality of Service & \cite{wahab2013vanet}\cite{akamatsu2014adaptive}\\ 
+ \hline
+ Delay based data dissemination & \cite{salvo2013timer}\cite{sospeter2018effective} \\
+ \hline
+ Probability based data dissemination&\cite{wisitpongphan2007broadcast}\cite{tonguz2010dv} \cite{sospeter2018effective}\\
+ \hline
+Push based data dissemination & \cite{schwartz2011directional}\\
+ \hline
+Pull based data dissemination &\cite{mondal2015secure}\\
+ \hline
+Cluster based data dissemination & \cite{zhang2013smartgeocast}\\ [1ex] 
+ \hline
+\end{tabular}
+\caption{Categories for attempts a data dissemination in VANETS based on \cite{rashid2020reliable} \cite{rashid2020overview}}
+\label{Routingtabel}
+\end{table}
+
+Quality of Service (QoS) describes a set of service requirements the network must meet when transporting a data stream. As such, approaches in this category aim to meet certain predefined requirements. The delay-based approach, on the other hand, relies on the definition of relay nodes to send messages through the network, suppressing distribution by nodes that were not selected as relays. In probability-based approaches, on the other hand, those messages are forwarded with priority when they have the greatest chance of reducing network load. The responsibility to keep the network load low is transferred to the individual nodes themselves in the push-based approach. Here, messages are not distributed regularly, but only when necessary. In addition to this procedure, the pull-based approach disseminates a request for specific information into the network, after which other nodes send response messages. The last category represents cluster-based data distribution, where the network is divided into self-organized clusters using the concept of geocasting.
+
+The number of use cases enabled by this technology is vast and continually growing. It encompasses safety-critical use cases such as "Cooperative Forward Collision Warning" and "Pre-Crash Sensing/Warning," as well as improvements to overall traffic flow through applications like "Green Light Optimal Speed Advisory." All of these, among others, are listed and explained in the "Car2X Manifesto" \cite{baldessari2007car}.
